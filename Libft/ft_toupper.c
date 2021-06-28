@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 10:11:44 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 16:05:27 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/28 18:06:42 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/28 18:23:23 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcpy(char *dst, const char *src)
+int     ft_toupper(int c)
 {
-    size_t  i;
-
-    i = 0;
-    while (src[i])
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (dst);
+    if (ft_islower(c) == 1)
+        c -= 32;
+    return (c);
 }

@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 10:11:44 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 16:05:27 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/28 17:30:35 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/28 17:40:47 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcpy(char *dst, const char *src)
+int     ft_isupper(int c)
 {
-    size_t  i;
-
-    i = 0;
-    while (src[i])
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (dst);
+    if ((unsigned char)c >= 'A' || (unsigned char)c <= 'Z')
+        return (1);
+    else
+        return (0);
 }

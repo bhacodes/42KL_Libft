@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 10:11:44 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 16:05:27 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/28 17:48:59 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/28 18:01:05 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcpy(char *dst, const char *src)
+int     ft_isascii(int c)
 {
-    size_t  i;
-
-    i = 0;
-    while (src[i])
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (dst);
+    if (c >= 0 && c <= 127)
+        return (1);
+    else
+        return (0);
 }

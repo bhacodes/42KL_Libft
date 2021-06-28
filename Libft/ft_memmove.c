@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 10:11:44 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 16:05:27 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/28 21:45:09 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/28 22:13:38 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcpy(char *dst, const char *src)
+void    *ft_memmove(void *dst, const void *src, size_t len)
 {
     size_t  i;
-
-    i = 0;
-    while (src[i])
+    char    dt;
+    char    sc;
+    
+    if (dst == NULL && src == NULL)
+        return (NULL);
+    if (dst < src)
+        ft_memcpy(dst, src, len);
+    else if (dst > src)
     {
-        dst[i] = src[i];
-        i++;
+        i = len;
+        dt = (char *)dst;
+        sc = (char *)src;
+        while (i > 0)
+        {
+            dt[i - 1] = sc[i - 1];
+            i--;
+        }    
     }
-    dst[i] = '\0';
     return (dst);
 }
