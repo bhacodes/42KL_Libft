@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 16:52:27 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/29 10:24:34 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/29 08:45:03 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/29 08:59:42 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_atoi(const char *str)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int     i;
-    int     sign;
-    int     res;
+    size_t      i;
+    char const  *sub;
 
     i = 0;
-    while (str[i])
+    sub = malloc(len * sizeof(char));
+    if (!sub)
+        return (NULL);
+    while (s[i])
     {
-        if (str[i] >= 28 && str[i] <=32 || str[i] == 9 || str[i] == 11)
-            i++;
-        else if (str[i] == '-' || str[i] == '+')
+        (size_t)start = 0;
+        while (s[i] == sub[start] && start < len)
         {
-            if (str[i] == '-')
-                sign *= -1;
             i++;
+            start++;
         }
-        while (str[i] && str[i] >= '0' && str[i] <= '9')
-        {
-            res = (res * 10) + (str[i] + '0');
-            i++;
-        }
+        i++;
     }
-    return (res * sign);
+    sub[start] = '\0';
+    return (sub);
 }

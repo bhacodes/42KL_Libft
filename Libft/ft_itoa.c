@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 16:52:27 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/29 10:24:34 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/29 14:41:54 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/29 15:03:50 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_atoi(const char *str)
+char    *ft_itoa(int n)
 {
+    char    *nb;
     int     i;
-    int     sign;
-    int     res;
 
+    nb = (char *)malloc(sizeof(char));
+    if (!nb)
+        return (NULL);
+    nb = (char *)n;
     i = 0;
-    while (str[i])
+    while (nb[i])
     {
-        if (str[i] >= 28 && str[i] <=32 || str[i] == 9 || str[i] == 11)
-            i++;
-        else if (str[i] == '-' || str[i] == '+')
+        if (nb[i] == '-')
         {
-            if (str[i] == '-')
-                sign *= -1;
-            i++;
+            ft_putchar('-');
         }
-        while (str[i] && str[i] >= '0' && str[i] <= '9')
-        {
-            res = (res * 10) + (str[i] + '0');
-            i++;
-        }
+        i++;
     }
-    return (res * sign);
+    nb[i] = '\0';
+    return (nb);
 }

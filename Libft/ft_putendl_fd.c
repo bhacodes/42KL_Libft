@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 22:55:22 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/29 12:16:36 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/29 10:10:05 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/06/29 10:11:42 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup(const char *s1)
+void    ft_putendl_fd(char *s, int fd)
 {
-    const char  *d;
-
-    d = malloc(ft_strlen(s1) * sizeof(char) + 1);
-    if (!d)
-        return (NULL);
-    d = ft_strcpy(d, s1);
-    return (d);
+    ft_putstr_fd(s, fd);
+    ft_putchar_fd('\n', fd);
 }
