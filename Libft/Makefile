@@ -6,7 +6,7 @@
 #    By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/28 15:10:19 by nmd-zaid          #+#    #+#              #
-#    Updated: 2021/06/29 15:20:52 by nmd-zaid         ###   ########.fr        #
+#    Updated: 2021/06/29 18:44:50 by nmd-zaid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = gcc
 
-FLAG = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 SRC :=  ft_atoi.c \
 		ft_bzero.c \
@@ -61,22 +61,40 @@ SRC :=  ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
-OBJS := $(SRC:%.c=%.o)
+SRC_BONUS := ft_lstadd_back.c \
+			 ft_lstadd_front.c \
+		 	 ft_lstclear.c \
+		 	 ft_lstdelone.c \
+		 	 ft_lstiter.c \
+		 	 ft_lstlast.c \
+		 	 ft_lstmap.c \
+		 	 ft_lstnew.c \
+		 	 ft_lstsize.c \
+
+OBJS := $(SRC:.c=.o)
+
+OBJS_BONUS := $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@$(CC) $(FLAGS) -c $(SRC) -I libft.h
 	@echo "$(NAME) created successfully"
 
+bonus: $(OBJS_BONUS) $(OBJS)
+	@ar rcs $(NAME) $(OBJS_BONUS) $(OBJS)
+	@$(CC) $(FLAGS) -c $(SRC_BONUS) -I libft.h
+	@echo "$(NAME) created successfully with bonus functions"
+
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(OBJS_BONUS)
 	@echo "All .o files sucessfully deleted"
 
-fclean:
-	@rm $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 	@echo "$(NAME) sucessfully deleted"
 
 re: fclean all
 
-.PHONY: clean fclean re
+.PHONY: clean fclean re all bonus
