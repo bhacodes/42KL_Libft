@@ -6,14 +6,14 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 10:10:05 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/29 10:11:42 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:24:45 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    ft_putstr_fd(s, fd);
-    ft_putchar_fd('\n', fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

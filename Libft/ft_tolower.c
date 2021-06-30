@@ -6,15 +6,15 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:22:39 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 18:23:26 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:38:19 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (ft_isupper(c) == 1)
-        c += 32;
-    return (c);
+	if (ft_isupper(c) == 1)
+		c += 32;
+	return (c);
 }

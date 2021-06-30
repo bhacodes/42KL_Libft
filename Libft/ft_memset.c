@@ -6,18 +6,18 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:27:29 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 18:47:15 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:24:02 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    while (len > 0)
-    {
-        b[len - 1] = (unsigned char)c;
-        len--;
-    }
-    return (b);
+	while (len > 0)
+	{
+		b[len - 1] = (unsigned char)c;
+		len--;
+	}
+	return (b);
 }

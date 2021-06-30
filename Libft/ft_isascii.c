@@ -6,16 +6,16 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 17:48:59 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 18:01:05 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:44:49 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (1);
-    else
-        return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

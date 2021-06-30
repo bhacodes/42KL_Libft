@@ -6,24 +6,24 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 11:52:43 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 12:25:55 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:29:21 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i])
-    {
-        if (s[i] == c)
-        {
-            return ((char *)s + i);
-        }
-        i++;
-    }
-    return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			return ((char *)s + i);
+		}
+		i++;
+	}
+	return (NULL);
 }

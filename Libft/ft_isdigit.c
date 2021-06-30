@@ -6,16 +6,16 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 17:42:38 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 17:44:38 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:45:04 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
-        return (1);
-    else
-        return (0);
+	if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
+		return (1);
+	else
+		return (0);
 }

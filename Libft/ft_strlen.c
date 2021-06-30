@@ -6,18 +6,18 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 10:04:12 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 10:11:13 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:32:31 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -6,16 +6,16 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:01:38 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/28 18:04:33 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:45:21 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if ((unsigned char)c >= 32 && (unsigned char)c <= 126)
-        return (1);
-    else
-        return (0);
+	if ((unsigned char)c >= 32 && (unsigned char)c <= 126)
+		return (1);
+	else
+		return (0);
 }
