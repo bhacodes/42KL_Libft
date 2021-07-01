@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 22:14:18 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:21:13 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:12:57 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*s2;
+	unsigned char	c2;
 
 	i = 0;
-	while (s[i] && i < n)
+	s2 = (unsigned char *)s;
+	c2 = (unsigned char)c;
+	while (i < n)
 	{
-		if (s[i] == (unsigned char)c)
-			return (*s[i]);
+		if (s2[i] == c)
+			return (&s2[i]);
 	}
 	return (NULL);
 }

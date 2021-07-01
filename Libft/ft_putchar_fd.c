@@ -6,13 +6,13 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 09:58:48 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:24:15 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:31:32 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

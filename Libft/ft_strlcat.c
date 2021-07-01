@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 10:54:16 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:31:28 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 13:37:55 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[d_len + i + 1] = '\0';
-	return (dst);
+	return (d_len + i + 1);
 }

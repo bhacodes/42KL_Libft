@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 09:08:30 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:30:56 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 13:34:16 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char const	*s3;
+	char		*s3;
 	size_t		i;
 	size_t		j;
 

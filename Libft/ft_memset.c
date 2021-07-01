@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 18:27:29 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:24:02 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:30:56 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	while (len > 0)
+	unsigned char	*b2;
+	size_t			i;
+
+	i = 0;
+	b2 = b;
+	while (i < len)
 	{
-		b[len - 1] = (unsigned char)c;
-		len--;
+		b2[i] = (unsigned char)c;
+		i++;
 	}
 	return (b);
 }

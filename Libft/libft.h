@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 15:05:34 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:43:42 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:31:54 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ int		ft_isdigit(int c);
 int		ft_islower(int c);
 int		ft_isprint(int c);
 int		ft_isupper(int c);
-char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
-char	ft_putchar_fd(char c, int fd);
-char	ft_putchar(char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putchar(char c);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putendl(char *s);
 void	ft_putnbr_fd(int n, int fd);
@@ -77,5 +76,6 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
+char	*ft_itoa(int n);
 
 #endif

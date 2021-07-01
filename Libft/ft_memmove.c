@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 21:45:09 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:23:47 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/06/30 12:19:03 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-	char	dt;
-	char	sc;
+	char	*dt;
+	char	*sc;
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
