@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:20:40 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 10:58:35 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/02 12:00:10 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	(*del)(lst->content);
+	del(lst->content);
 	free(lst);
 }
