@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 10:54:16 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 13:37:55 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/04 21:20:40 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,27 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	d_len;
-	int		i;
+	size_t	s_len;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = 0;
 	d_len = ft_strlen(dst);
-	while (src[i] && (d_len + i + 1) < dstsize)
+	s_len = ft_strlen(src);
+	if (dstsize <= d_len)
+		return (s_len + dstsize);
+	else
 	{
-		dst[d_len + i] = src[i];
-		i++;
+		i = ft_strlen(dst);
+		while (src[j])
+		{
+			dst[i + j] = src[j];
+			if ((i + j) == dstsize - 1)
+				break ;
+			j++;
+		}
+		dst[i + j] = '\0';
 	}
-	dst[d_len + i + 1] = '\0';
-	return (d_len + i + 1);
+	return (d_len + s_len);
 }

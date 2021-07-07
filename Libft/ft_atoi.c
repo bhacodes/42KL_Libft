@@ -6,35 +6,45 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:52:27 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 10:42:08 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/05 16:32:18 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	get_sign(const char *c, int *counter)
 {
 	int	i;
-	int	sign;
-	int	res;
+	int	result;
 
 	i = 0;
-	sign = 1;
-	while (str[i])
+	result = 1;
+	while (ft_isspace(c[i]))
+		i++;
+	if (c[i] == '-' || c[i] == '+')
 	{
-		if ((str[i] >= 28 && str[i] <= 32) || str[i] == 9 || str[i] == 11)
-			i++;
-		else if (str[i] == '-' || str[i] == '+')
-		{
-			if (str[i] == '-')
-				sign *= -1;
-			i++;
-		}
-		while (str[i] && str[i] >= '0' && str[i] <= '9')
-		{
-			res = (res * 10) + (str[i] + '0');
-			i++;
-		}
+		if (c[i] == '-')
+			result *= -1;
+		i++;
 	}
-	return (res * sign);
+	*counter = i;
+	return (result);
+}
+
+int	ft_atoi(const char *str)
+{
+	int		i;
+	int		neg;
+	long	result;
+
+	i = 0;
+	neg = get_sign(str, &i);
+	result = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	result *= neg;
+	return (result);
 }

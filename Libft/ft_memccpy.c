@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 22:14:18 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/02 15:27:36 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/07/02 12:32:02 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/07/02 14:07:33 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int	i;
-	unsigned char	*s2;
-	unsigned char	c2;
+	size_t			i;
+	unsigned char	*dt;
+	unsigned char	*sc;
 
 	i = 0;
-	s2 = (unsigned char *)s;
-	c2 = (unsigned char)c;
+	dt = (unsigned char *)dst;
+	sc = (unsigned char *)src;
 	while (i < n)
 	{
-		if (s2[i] == c2)
-			return (&s2[i]);
+		dt[i] = sc[i];
+		if (dt[i] == (unsigned char)c)
+			return (&dt[i] + 1);
 		i++;
 	}
 	return (NULL);

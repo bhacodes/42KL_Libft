@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 23:06:52 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/01 23:06:54 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/05 20:07:16 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,13 @@ static int	ft_wcount(char const *s, char c)
 	word = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
 			i++;
-		{
-			while (s[i] && s[i] != c)
-				i++;
-			{
-				if (s[i] == c)
-					word++;	
-			}
-		}
+		if (s[i] != '\0')
+			word++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	word += 1;
 	return (word);
 }
 
@@ -44,17 +39,18 @@ char	**ft_split(char const *s, char c)
 	size_t	k;
 
 	i = 0;
+	j = 0;
+	k = 0;
 	split = (char **)malloc(sizeof(char *) * (ft_wcount(s, c) + 1));
 	if (!split)
 		return (NULL);
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
 			i++;
 		j = i;
 		while (s[i] && s[i] != c)
 			i++;
-		k = 0;
 		if (i > j)
 			split[k++] = ft_strndup(s + j, i - j);
 	}

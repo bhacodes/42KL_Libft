@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 11:52:43 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 11:29:21 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/04 14:22:29 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != (char)c)
 	{
-		if (s[i] == c)
-		{
-			return ((char *)s + i);
-		}
+		if (s[i] == '\0')
+			return (NULL);
 		i++;
 	}
-	return (NULL);
+	return ((char *)s + i);
 }

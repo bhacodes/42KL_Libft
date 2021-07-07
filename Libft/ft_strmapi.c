@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:02:53 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/01 21:05:21 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/07 14:53:38 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*fstr;
 	unsigned int	i;
 
-	i = 1;
-	fstr = malloc(sizeof(char) * (*f)(i, s[i]) + 1);
-	if (!fstr)
-		return (NULL);
-	while (s[i])
+	i = 0;
+	if (s)
 	{
-		fstr[i] = f(i, s[i]);
-		i++;
+		fstr = malloc(sizeof(char) * (ft_strlen(s)) + 1);
+		if (!fstr)
+			return (NULL);
+		while (s[i])
+		{
+			fstr[i] = f(i, s[i]);
+			i++;
+		}
+		fstr[i] = '\0';
+		return (fstr);
 	}
-	fstr[i] = '\0';
-	return (fstr);
+	return (NULL);
 }

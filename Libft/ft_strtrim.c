@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 09:17:25 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/01 21:13:39 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/06 23:34:37 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*s2;
-	size_t		i;
+	size_t		s1_size;
 
-	s2 = malloc((ft_strlen(s1) - ft_strlen(set)) * sizeof(char) + 1);
-	if (!s2)
+	if (!s1 || !set)
 		return (NULL);
-	i = 0;
-	while (*s1 && ft_strchr(set, *s1) && ft_strrchr(s1, *set))
-	{
-		s2[i] = (char)s1;
-		i++;
-	}
-	s2[i] = '\0';
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	s1_size = ft_strlen(s1);
+	while (s1_size && ft_strchr(set, s1[s1_size]))
+		s1_size--;
+	s2 = ft_substr((char *)s1, 0, s1_size + 1);
 	return (s2);
 }

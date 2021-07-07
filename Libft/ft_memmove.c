@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 21:45:09 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 12:19:03 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/04 14:08:51 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	char	*dt;
-	char	*sc;
+	char		*d;
+	const char	*s;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst < src)
-		ft_memcpy(dst, src, len);
-	else if (dst > src)
+	if (dst == src || len == 0)
+		return (dst);
+	d = dst;
+	s = src;
+	if (d > s && d - s < (int)len)
 	{
-		i = len;
-		dt = (char *)dst;
-		sc = (char *)src;
-		while (i > 0)
-		{
-			dt[i - 1] = sc[i - 1];
-			i--;
-		}
+		d += len - 1;
+		s += len - 1;
+		while (len--)
+			*d-- = *s--;
 	}
+	else if (d < s && s - d < (int)len)
+	{
+		while (len--)
+			*d++ = *s++;
+	}
+	else
+		ft_memcpy(dst, src, len);
 	return (dst);
 }

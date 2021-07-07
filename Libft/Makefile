@@ -6,7 +6,7 @@
 #    By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/28 15:10:19 by nmd-zaid          #+#    #+#              #
-#    Updated: 2021/07/01 23:04:59 by nmd-zaid         ###   ########.fr        #
+#    Updated: 2021/07/05 16:32:31 by nmd-zaid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,10 @@ SRC :=  ft_atoi.c \
 		ft_isdigit.c \
 		ft_islower.c \
 		ft_isprint.c \
+		ft_isspace_bonus.c \
 		ft_isupper.c \
 		ft_itoa.c \
+		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
