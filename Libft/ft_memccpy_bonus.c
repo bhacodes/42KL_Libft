@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/29 10:06:31 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/08 15:30:39 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/07/02 12:32:02 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/07/02 14:07:33 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
-	return ;
-}	
+	size_t			i;
+	unsigned char	*dt;
+	unsigned char	*sc;
+
+	i = 0;
+	dt = (unsigned char *)dst;
+	sc = (unsigned char *)src;
+	while (i < n)
+	{
+		dt[i] = sc[i];
+		if (dt[i] == (unsigned char)c)
+			return (&dt[i] + 1);
+		i++;
+	}
+	return (NULL);
+}

@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 17:30:07 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/07 16:13:17 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:21:04 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,27 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list			*new;
+	t_list	*new;
+	t_list	*tmp;
 
-	new = malloc(sizeof(t_list));
+	if (!lst || !f)
+		return (NULL);
+	new = ft_lstnew(f(lst->content));
 	if (!new)
 		return (NULL);
-	while (lst != NULL)
+	tmp = new;
+	lst = lst->next;
+	while (lst)
 	{
-		new = f(lst->content);
+		new->next = ft_lstnew(f(lst->content));
+		if (!new->next)
+		{
+			ft_lstclear(&tmp, del);
+			return (NULL);
+		}
+		new = new->next;
 		lst = lst->next;
 	}
-	if (del)
-		del(new->content);
-	return (new);
+	new->next = NULL;
+	return (tmp);
 }

@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/29 10:06:31 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/07/08 15:30:39 by nmd-zaid         ###   ########.fr       */
+/*   Created: 2021/06/28 17:40:58 by nmd-zaid          #+#    #+#             */
+/*   Updated: 2021/07/04 11:09:35 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_islower(int c)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
-	return ;
-}	
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
+}

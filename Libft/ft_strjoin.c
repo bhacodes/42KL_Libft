@@ -6,7 +6,7 @@
 /*   By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 09:08:30 by nmd-zaid          #+#    #+#             */
-/*   Updated: 2021/06/30 13:34:16 by nmd-zaid         ###   ########.fr       */
+/*   Updated: 2021/07/08 15:50:40 by nmd-zaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t		i;
 	size_t		j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s3 = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char) + 1);
 	if (!s3)
 		return (NULL);

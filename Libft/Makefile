@@ -6,7 +6,7 @@
 #    By: nmd-zaid <nmd-zaid@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/28 15:10:19 by nmd-zaid          #+#    #+#              #
-#    Updated: 2021/07/05 16:32:31 by nmd-zaid         ###   ########.fr        #
+#    Updated: 2021/07/08 18:09:23 by nmd-zaid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,55 +23,56 @@ SRC :=  ft_atoi.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
-		ft_islower.c \
 		ft_isprint.c \
-		ft_isspace_bonus.c \
-		ft_isupper.c \
 		ft_itoa.c \
-		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
 		ft_memmove.c \
 		ft_memset.c \
 		ft_putchar_fd.c \
-		ft_putchar.c \
 		ft_putendl_fd.c \
-		ft_putendl.c \
 		ft_putnbr_fd.c \
-		ft_putnbr.c \
 		ft_putstr_fd.c \
-		ft_putstr.c \
 		ft_split.c \
 		ft_strchr.c \
-		ft_strcmp.c \
-		ft_strcpy.c \
 		ft_strdup.c \
+		ft_striteri.c \
 		ft_strjoin.c \
 		ft_strlcat.c \
 		ft_strlcpy.c \
 		ft_strlen.c \
 		ft_strmapi.c \
 		ft_strncmp.c \
-		ft_strncpy.c \
-		ft_strndup.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
-		ft_strstr.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
-SRC_BONUS := ft_lstadd_back.c \
+SRC_BONUS := ft_islower_bonus.c \
+			 ft_isspace_bonus.c \
+			 ft_isupper_bonus.c \
+			 ft_memccpy_bonus.c \
+			 ft_putchar_bonus.c \
+			 ft_putendl_bonus.c \
+			 ft_putnbr_bonus.c \
+			 ft_putstr_bonus.c \
+			 ft_strcmp_bonus.c \
+			 ft_strcpy_bonus.c \
+			 ft_strncpy_bonus.c \
+			 ft_strndup_bonus.c \
+			 ft_lstadd_back.c \
 			 ft_lstadd_front.c \
 		 	 ft_lstclear.c \
-		 	 ft_lstdelone.c \
-		 	 ft_lstiter.c \
-		 	 ft_lstlast.c \
-		 	 ft_lstmap.c \
-		 	 ft_lstnew.c \
-		 	 ft_lstsize.c \
+			 ft_lstdelone.c \
+			 ft_lstiter.c \
+			 ft_lstlast.c \
+			 ft_lstmap.c \
+			 ft_lstnew.c \
+			 ft_lstsize.c \
+			 
 
 OBJS := $(SRC:.c=.o)
 
@@ -81,13 +82,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@$(CC) $(FLAGS) -c $(SRC) -I libft.h
 	@echo "$(NAME) created successfully"
 
-bonus: $(OBJS_BONUS) $(OBJS)
-	@ar rcs $(NAME) $(OBJS_BONUS) $(OBJS)
-	@$(CC) $(FLAGS) -c $(SRC_BONUS) -I libft.h
-	@echo "$(NAME) created successfully with bonus functions"
+bonus: $(OBJS_BONUS)
+	@ar rcs $(NAME) $(OBJS_BONUS)
+	@echo "$(NAME) bonus functions created successfully"
 
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS)
